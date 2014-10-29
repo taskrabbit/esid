@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ "x$ES_HOME" = "x" ]; then
+    echo "Error: ES_HOME environment variable is not set."
+    exit 1;
+fi
 
 CLASSPATH=`echo build/*.jar`
 for i in ${ES_HOME}/libexec/*.jar;
