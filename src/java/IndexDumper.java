@@ -11,7 +11,7 @@ import org.elasticsearch.index.fieldvisitor.AllFieldsVisitor;
 
 public class IndexDumper
 {
-  public enum Action { DUMP, LIST, COUNT };
+  public enum Action { HELP, DUMP, LIST, COUNT };
 
   public static void main( String[] args ) throws Exception
   {
@@ -26,14 +26,14 @@ public class IndexDumper
     int i = 0;
     for ( ; i < args.length; i++ )
       {
-        if ( args[i].equals( "-l" ) ) action = Action.LIST;
+             if ( args[i].equals( "-h" ) ) action = Action.HELP;
+        else if ( args[i].equals( "-l" ) ) action = Action.LIST;
         else if ( args[i].equals( "-c" ) ) action = Action.COUNT;
         else if ( args[i].equals( "-d" ) ) includeDocIds = true;
-        else
-          {
-            break;
-          }
+        else break;
       }
+
+    if ( Action.HELP == action ) usageAndExit();
 
     for ( ; i < args.length ; i++ )
       {
@@ -106,10 +106,11 @@ public class IndexDumper
 
   private static void usageAndExit()
   {
-    System.out.println( "Usage: IndexDumper [option] index1 ... indexN" );
+    System.out.println( "Usage: [option] <index...>" );
     System.out.println( "Options:" );
-    System.out.println( "  -c            Emit document count" );
+    System.out.println( "  -h            Help" );
     System.out.println( "  -d            Include document numbers in output" );
+    System.out.println( "  -c            Emit document count" );
     System.out.println( "  -l            List fields in index" );
     System.exit(1);
   }
