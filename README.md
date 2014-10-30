@@ -1,17 +1,17 @@
-# ESID: ElasticSearch Index Dumper
+# ESID: Elasticsearch Index Dumper
 
-Simple utility to dump out the _source field values from ElasticSearch index(es).
+Simple utility to dump out the _source field values from Elasticsearch index(es).
 
-The default output is of a form that can be imported into an ElasticSearch cluster with [ElasticDump](https://github.com/taskrabbit/elasticsearch-dump)
+The default output is of a form that can be imported into an Elasticsearch cluster with [ElasticDump](https://github.com/taskrabbit/elasticsearch-dump)
 
-# ElasticSearch Home
+# Elasticsearch Home
 
-In order to build or run `esid` the environment variable `ES_HOME` must be set, pointing to the home directory of your ElasticSearch installation.  We use the lucene and ElasticSearch Java packages from your local ElasticSearch install.  Be sure that you are using the same version of ElasticSearch with ESID that your data was created with.
+In order to build or run `esid` the environment variable `ES_HOME` must be set, pointing to the home directory of your Elasticsearch installation.  We use the Lucene and Elasticsearch Java packages from your local Elasticsearch install.  Be sure that you are using the same version of Elasticsearch with ESID that your data was created with.
 
 # Build
 
 ```
-$ export ES_HOME=<your ElasticSearch install>
+$ export ES_HOME=<your Elasticsearch install>
 
 $ ant build
 ```
@@ -19,7 +19,7 @@ $ ant build
 # Run
 
 ```
-$ export ES_HOME=<your ElasticSearch install>
+$ export ES_HOME=<your Elasticsearch install>
 
 $ ./bin/run.sh <index...>
 ```
