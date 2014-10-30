@@ -6,7 +6,7 @@ The default output is of a form that can be imported into an ElasticSearch clust
 
 # ElasticSearch Home
 
-In order to build or run `esid` the environment variable `ES_HOME` must be set, pointing to the home directory of your ElasticSearch installation.
+In order to build or run `esid` the environment variable `ES_HOME` must be set, pointing to the home directory of your ElasticSearch installation.  We use the lucene and ElasticSearch Java packages from your local ElasticSearch install.  Be sure that you are using the same version of ElasticSearch with ESID that your data was created with.
 
 # Build
 
