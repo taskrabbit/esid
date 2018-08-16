@@ -6,7 +6,7 @@ if [ "x$ES_HOME" = "x" ]; then
 fi
 
 CLASSPATH=`echo build/*.jar`
-for i in ${ES_HOME}/libexec/*.jar;
+for i in ${ES_HOME}/lib/*.jar;
 do
     CLASSPATH="${CLASSPATH}:${i}"
 done
